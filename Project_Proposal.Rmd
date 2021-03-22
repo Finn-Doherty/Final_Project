@@ -1,28 +1,43 @@
 ---
 title: "Project_Proposal"
+authors: Kellie Johnson, JT Galla, and Finn Doherty
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
+library(tidyverse)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Non-Voters Dataset
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Research Question: How do party affiliation and past experiences correlate with 
+attitudes towards voting?
 
-```{r cars}
-summary(cars)
+H0: There is no connection between party affiliation and past voting experiences
+as attitude towards voting.
+H1: Democrats with poor past voting experiences are the least likely to be 
+devoted to voting.
+H2: Neither party is more likely to be devoted to voting, but those with poor
+past experiences are less likely.
+
+This data comes from polling done by Ipsos on behalf of FiveThirtyEight. 
+The survey was done online. Each observation is one respondent. These responses
+were then joined with voting records by Aristotle. This resulted in 5,399 
+matching responses, which are the observations in the dataset. Each variable 
+represents a part of a question, outlined in nonvoters_codebook.pdf. There are
+119 columns. The most relevant variables to our research question are: Q2_1 
+(the importance of voting for being a good American), Q14 (if the Republican 
+party wants them to vote), Q15 (if the Democratic party wants them to vote), Q16
+(how easy it is to vote), Q18_1 through Q18_10 (past bad experiences with 
+voting), Q21 (will they vote in 2020), Q23 (Biden or Trump), Q27_1 through Q27_6
+(when have they voted), Q28_1 through Q28_8 (why they voted), Q29_1 through 
+Q29_10 (why they didnt vote), Q30 (party affiliation), VOTER_CATEGORY (how often
+they voted), RACE (race).
+
+```{r non-voter}
+library(readr)
+nonvoters_data <- read_csv("nonvoters_data.csv")
+glimpse(nonvoters_data)
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
