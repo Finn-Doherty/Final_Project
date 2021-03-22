@@ -6,7 +6,7 @@ output:
   html_document: default
 ---
 
-```{r}
+```{r include=FALSE}
 library(readr)
 library(tidyverse)
 ```
@@ -73,7 +73,7 @@ are you about the 'Big One,' a massive, catastrophic earthquake?" and the
 'Big One' is a term to describe the San Andreas Fault having a supermassive
 earthquake, one that has been sensationalized in various movies. 
 
-```{r non-voter}
+```{r earthquake_data}
 earthquake_data <- read_csv("earthquake_data.csv")
 glimpse(earthquake_data)
 ```
