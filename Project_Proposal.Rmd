@@ -1,13 +1,21 @@
 ---
 title: "Project_Proposal"
 authors: Kellie Johnson, JT Galla, and Finn Doherty
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r}
+library(readr)
 library(tidyverse)
 ```
 
+```{r include=FALSE}
+knitr::opts_chunk$set(message = FALSE, 
+                      warning = FALSE, 
+                      comment = "#>", highlight = TRUE)
+```
 
 ## Non-Voters Dataset
 
@@ -36,8 +44,36 @@ Q29_10 (why they didnt vote), Q30 (party affiliation), VOTER_CATEGORY (how often
 they voted), RACE (race).
 
 ```{r non-voter}
-library(readr)
 nonvoters_data <- read_csv("nonvoters_data.csv")
 glimpse(nonvoters_data)
 ```
 
+
+## Earthquake Dataset
+
+Research Question: How does previous earthquake experience affect relative fear
+of the 'Big One' happening?
+
+H0: There is no connection between previous earthquake experience and fear of
+the 'Big One' happening.
+H1: Experiencing any earthquake at some point in your past results in a greater
+likelihood that you fear the 'Big One' happening.
+H2: Experiencing a major earthquake at some point in your past results in a 
+greater likelihood that you fear the 'Big One' happening.
+
+This data comes from a poll by SurveyMonkey Audience that FiveThirtyEight 
+commissioned. The data consists of 1013 observations, each one matching one 
+response, made up of people across America. The responsers had varying genders,
+locations, income level, and ages. The dataset also consists of 11 variables,
+some demographic like the varying parameters aforementioned, and others specific
+to earthquake data, such as previous experience and fear of 'The Big One' 
+happening. The most relevant variables to this study will be the "How worried 
+are you about the 'Big One,' a massive, catastrophic earthquake?" and the
+"Have you ever experienced an earthquake?" questions. For clarification, the 
+'Big One' is a term to describe the San Andreas Fault having a supermassive
+earthquake, one that has been sensationalized in various movies. 
+
+```{r non-voter}
+earthquake_data <- read_csv("earthquake_data.csv")
+glimpse(earthquake_data)
+```
