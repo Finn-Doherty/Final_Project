@@ -103,7 +103,7 @@ those available on Spotify. The most relevant variables to this study will be
 "student_writer", "trope_count", and "opponents". 
 
 ```{r fight_songs_data}
-fight_songs_data <- read_csv("/fight-songs/fight-songs.csv")
-glipmse(fight_songs_data)
+fight_songs_data <- read_csv("~/R/Final_Project/fight-songs/fight-songs.csv")
+glimpse(fight_songs_data)
 ```
 
