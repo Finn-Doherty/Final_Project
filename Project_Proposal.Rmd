@@ -77,3 +77,33 @@ earthquake, one that has been sensationalized in various movies.
 earthquake_data <- read_csv("earthquake_data.csv")
 glimpse(earthquake_data)
 ```
+
+## College Fight Songs Dataset 
+
+Research Question: Do student writers result in more cliched and rivalry
+oriented fight songs?
+
+H0: There is no correlation between the status of the author (student vs non-
+student) and the number of the cliches or the mention of a rival in a fight song.
+H1: A song written by a student results in a larger proportion of cliches in the 
+fight song. 
+H2: A song written by a student is more likely to mention a rival opponent. 
+
+This data comes from spotify, college websites, and news accounts and was 
+compiled by FiveThirtyEight. The data set contains data about fight songs from 
+all schools in the Power Five conferences — the ACC, Big Ten, Big 12, Pac-12 and 
+SEC — plus Notre Dame. There are 23 variables and 65 fight songs evaluated 
+across those variables. Some schools have more than one fight song, and some of 
+the songs sanctioned as “official” by their schools aren’t the ones that fans 
+sing out. The data compilers chose the songs that seemed best-known and best-loved. 
+They also limited their analysis to the lyrics sung most regularly and also 
+published by the school, so some verses were not included in the analysis. The 
+tempo and length information come from the version of the song they chose from 
+those available on Spotify. The most relevant variables to this study will be
+"student_writer", "trope_count", and "opponents". 
+
+```{r fight_songs_data}
+fight_songs_data <- read_csv("/fight-songs/fight-songs.csv")
+glipmse(fight_songs_data)
+```
+
